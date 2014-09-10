@@ -1,0 +1,12 @@
+header {
+  width:100%;
+  height:50px;
+  background-color:#a3b3be;
+}
+
+header img {
+  width:28px;
+  height:28px;
+  display:inline-block;
+  background-color:transparent;
+}
