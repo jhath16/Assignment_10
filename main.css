@@ -1,6 +1,5 @@
 body {
-  margin:0;
-  height:1000px;
+  margin:0;;
   font-family:helvetica;
 }
 
@@ -72,14 +71,21 @@ input:focus {
   width:24%;
   height:100%;
   background-color:lightyellow;
+  text-align:center;
 }
+
+.left img {
+  margin-top:10px;
+  border-radius:5px;
+}
+
 .follow {
   border-top:1px solid #e5e5e5;
 }
+
 .follow li {
   display:inline-block;
 }
-
 
 .follow ul {
   margin:0;
@@ -95,6 +101,7 @@ input:focus {
 }
 
 .right {
+  float:right;
   display:inline-block;
   height:100%;
   width:75%;
@@ -109,4 +116,12 @@ input:focus {
   padding-right:15px;
   padding-left:15px;
   background-color:red;
+}
+
+.button {
+  display:inline-block;
+}
+
+.footer {
+  width:80%;
 }
