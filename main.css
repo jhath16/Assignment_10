@@ -11,11 +11,11 @@ header {
   margin:0;
 }
 
-header img {
-  width:28px;
-  height:28px;
-  display:inline-block;
-  vertical-align:middle;
+.header-container {
+  position:relative;
+  width:80%;
+  height:100%;
+  margin:0 auto;
 }
 
 header nav {
@@ -23,6 +23,14 @@ header nav {
 }
 nav ul {
   padding:0;
+}
+
+.octocat {
+  vertical-align:middle;
+}
+
+.octocat:hover {
+  color:#4183c4;
 }
 
 header li {
@@ -43,13 +51,54 @@ header li a:hover {
 
 }
 
-input {
+header input {
   width:354px;
-  height:22px;
+  height:25px;
   font-size:11px;
-  border-radius:4px;
-  border:1px solid grey;
+  border-radius:3px;
+  border:1px solid #CCCCCC;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.75); 
   padding-left:7px;
+}
+
+.top-right-nav {
+  position:absolute;
+  right:0;
+  top:0;
+  vertical-align:middle;
+}
+
+span.login-name {
+  vertical-align:top;
+  font-size:13px;
+  font-weight:bold;
+  color:#333333;
+}
+
+span.triangle-down {
+  font-size:10px;
+}
+
+.top-right-nav img {
+  border-radius:5px;
+  height:21px;
+  width:21px;
+  vertical-align:middle;
+}
+h1 {
+  text-align:left;
+  font-size:24px;
+  margin:0;
+  margin-left:3px;
+}
+
+h2 {
+  text-align:left;
+  font-size:21px;
+  color:#666666;
+  margin:0;
+  font-weight:100;
+  margin-left:3px;
 }
 
 input:focus {
@@ -71,7 +120,6 @@ input:focus {
   width:24%;
   height:100%;
   background-color:lightyellow;
-  text-align:center;
 }
 
 .left img {
@@ -124,4 +172,8 @@ input:focus {
 
 .footer {
   width:80%;
+}
+
+.footer * {
+  display:inline-block;
 }
