@@ -5,12 +5,15 @@
   <link href="main.css" rel="stylesheet" type="text/css">
   <link href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" rel="stylesheet" type="text/css">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 </head>
 <body>
 </body>
   <header>
     <div class="header-container">
-      <span class="mega-octicon octicon-mark-github octocat"></span>
+      <a href="">
+        <span class="mega-octicon octicon-mark-github octocat"></span>
+      </a>
       <input class="searchbar-1" type="text" placeholder="Search GitHub" name="search">
       <nav>
         <ul>
@@ -24,21 +27,31 @@
         <nav>
           <ul>
             <li>
-              <img src="https://avatars0.githubusercontent.com/u/2738288?v=2&s=460">
-              <span class="login-name">jhath16<!-- jhath.login --></span>
+              <a href="">
+                <img src="https://avatars0.githubusercontent.com/u/2738288?v=2&s=460">
+                <span class="login-name">jhath16<!-- jhath.login --></span>
+              </a>
             </li>
             <li>
-              <span class="octicon octicon-plus"></span>
-              <span class="octicon octicon-triangle-down triangle-down"></span>
+              <a href="">
+                <span class="octicon octicon-plus"></span>
+                <span class="octicon octicon-triangle-down triangle-down"></span>
+              </a>
             </li>
             <li>
-              <span class="octicon octicon-inbox"></span>
+              <a href="">
+                <span class="octicon octicon-inbox"></span>
+              </a>
             </li>
             <li>
-              <span class="octicon octicon-gear"></span>
+              <a href="">
+                <span class="octicon octicon-gear"></span>
+              </a>
             </li>
             <li>
-              <span class="octicon octicon-sign-out"></span>
+              <a href="">
+                <span class="octicon octicon-sign-out"></span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -50,22 +63,23 @@
       <img src="https://avatars0.githubusercontent.com/u/2738288?v=2&s=460">    <!-- Insert jhath16.avatar_url -->
       <h1>Justin Hathaway<!-- jhath16.name --></h1>
       <h2>jhath16<!-- jhath16.login --></h2>
-      <div class="info">
+      <div class="info sidebar-div">
+        <span class="octicon octicon-mail"></span>
         <a href="">
-        hathaway.justin@gmail.com<!-- jhath16.email -->
+          hathaway.justin@gmail.com<!-- jhath16.email -->
         </a>
-        <a href="">
-          Joined on November 6, 2012<!-- "Joined on" + jhath16.created_at (moment.js) -->
-        </a>
+        <br>
+        <span class="octicon octicon-clock"></span>
+        <span>Joined on November 6, 2012</span><!-- "Joined on" + jhath16.created_at (moment.js) -->
       </div>
-      <div class="follow">
+      <div class="follow sidebar-div">
         <ul>
           <a href=""><li><span>2</span><p>Followers</p></li></a>
           <a href=""><li><span>0</span><p>Starred</p></li></a>
           <a href=""><li><span>2</span><p>Following</p></li></a>
         </ul>
       </div>
-      <div class="organizations">
+      <div class="organizations sidebar-div">
         <h3>Organizations</h3>
         <!-- Append img and link for TIY here -->
       </div>
@@ -81,7 +95,7 @@
         <div class="button">Search</div>
       </div>
       <div class="repositories">
-
+        <!-- Append all repositories here -->
       </div>
     </div>
   </div>
