@@ -15,7 +15,7 @@
         <span class="mega-octicon octicon-mark-github octocat"></span>
       </a>
       <input class="searchbar-1" type="text" placeholder="Search GitHub" name="search">
-      <nav>
+      <nav class="explore-nav">
         <ul>
           <li><a href="">Explore</a></li>
           <li><a href="">Gist</a></li>
@@ -81,14 +81,24 @@
       </div>
       <div class="organizations sidebar-div">
         <h3>Organizations</h3>
-        <!-- Append img and link for TIY here -->
+        <!-- Append div and link for TIY here -->
+            <!--For every organization, generate this-->
+        <div class="org-link">
+          <a href=""><img src="https://avatars.githubusercontent.com/u/8293064?v=2"></a>
+        </div>
+            <!--For every organization, generate this-->
       </div>
     </div>
     <div class="right">
       <div class="tabs">
-        <a href="">Contributions</a>
-        <a href="">Repositories</a>
-        <a href="">Public activity</a>
+        <a href=""><span class="octicon octicon-diff-added"></span>Contributions</a>
+        <a href=""><span class="octicon octicon-repo"></span>Repositories</a>
+        <a href=""><span class="octicon octicon-rss"></span>Public activity</a>
+        <a href="">
+          <div class="edit-button">
+            <span class="octicon octicon-pencil"></span>Edit profile
+          </div>
+        <a>
       </div>
       <div class="search">
         <input class="searchbox-2" type="text" placeholder="Find a repository...">
