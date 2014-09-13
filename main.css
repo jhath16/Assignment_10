@@ -127,11 +127,14 @@ h2 {
   margin-left:3px;
 }
 
+h3 {
+  font-size:16px;
+}
+
 .container {
   width:77%;
   height:700px; /*Remove this height when finished with the .repos div*/
   margin:0 auto;
-  border:1px solid black;
   margin-top:18px;
 }
 
@@ -256,10 +259,10 @@ h2 {
 
 .tabs {
   position:relative;
-  border-bottom:1px solid grey;
+  border-bottom:1px solid #dddddd;
   padding-top:8px;
   padding-bottom:8px;
-  margin-bottom:20px;
+  margin-bottom:8px;
 }
 
 .tabs span {
@@ -285,7 +288,7 @@ h2 {
   vertical-align:middle;
   border:1px solid #d5d5d5;
   border-radius:3px;
-  padding: 4px 9px 4px 9px;
+  padding: 4px 9px;
   background:linear-gradient(#fcfcfc,#f0f0f0);
   font-size:13px;
   font-weight:bold;
@@ -301,6 +304,78 @@ h2 {
   font-size:16px;
 }
 
+.search {
+  border-bottom:1px solid #dddddd;
+  position:relative;
+}
+
+.searchbox-2 {
+  height:18px;
+  width:260px;
+  padding:7px 8px;
+  border:1px solid #cccccc;
+  border-radius:3px;
+  font-size:12px;
+  letter-spacing:-.3px;
+}
+
+.search-button {
+  display:inline-block;
+  background:linear-gradient(#fcfcfc,#eeeeee);
+  padding:9px 13px;
+  border:1px solid #cccccc;
+  border-radius:3px;
+  font-size:12px;
+  font-weight:bold;
+  color:#333333;
+  margin-left:4px;
+}
+
+.search nav {
+  display:inline-block;
+  margin-left:15px;
+}
+
+.search nav ul li {
+  display:inline-block;
+  list-style:none;
+  font-size:14px;
+  margin:0 3px;
+}
+
+.search a {
+  color:#4183c4;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.search nav a:hover {
+  text-decoration:underline;
+}
+
+.new-repo-button {
+  position:absolute;
+  right:0;
+  bottom:8px;
+  display:inline-block;
+  background:linear-gradient(#89dc6c,#61b145);
+  padding:8px 13px;
+  border:1px solid #5ca94a;
+  border-radius:3px;
+  font-size:12px;
+  font-weight:bold;
+  color:#fff;
+}
+
+.new-repo-button:hover {
+  background:linear-gradient(#79d758,#61b145);
+}
+
+.new-repo-button span {
+  color:#fff;
+  margin-right:4px;
+}
+
 input:focus {
   color:#333333;
   border:1px solid #51a7e8;
@@ -308,8 +383,55 @@ input:focus {
   outline:none;
 }
 
-.button {
+.search-button:hover {
+  background:linear-gradient(#eeeeee,#dddddd);
+}
+/*~~~~~~~~~~~~~~~~Repositories formatting~~~~~~~~~~~~~~~~~*/
+
+.repo {
+  padding:30px 0;
+}
+
+.left-repo {
   display:inline-block;
+}
+
+.left-repo a {
+  text-decoration:none;
+}
+
+.left-repo a:hover {
+  text-decoration:underline;
+  color:#4183c4;
+}
+
+h4 {
+  margin:0;
+  color:#4183c4;
+  font-size:20px;
+}
+
+.left-repo p {
+  margin-top:13 px;
+  color:#888888;
+  font-size:12px;
+}
+
+.right-repo {
+  float:right;
+  vertical-align:middle;
+  color:#888888;
+  margin-top:6px;
+  font-weight:bold;
+}
+
+.right-repo span {
+  margin-right:4px;
+  font-size:14px;
+}
+
+span.code-type {
+  font-size:12px;
 }
 
 .footer {
