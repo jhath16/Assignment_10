@@ -434,6 +434,15 @@ span.code-type {
   font-size:12px;
 }
 
+.side-buttons {
+  color:#888888;
+  text-decoration:none;
+}
+
+.side-buttons:hover {
+  color:#4183c4;
+}
+
 .footer {
   width:77%;
 }

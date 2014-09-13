@@ -60,13 +60,15 @@
   </header>
   <div class="container">
     <div class="left">
+    </div>
+    <script id="sidebar" type="text/template">
       <img src="https://avatars0.githubusercontent.com/u/2738288?v=2&s=460">    <!-- Insert jhath16.avatar_url -->
-      <h1>Justin Hathaway<!-- jhath16.name --></h1>
-      <h2>jhath16<!-- jhath16.login --></h2>
+      <h1><%= name %></h1>
+      <h2><%=  login %></h2>
       <div class="info sidebar-div">
         <span class="octicon octicon-mail"></span>
         <a href="">
-          hathaway.justin@gmail.com<!-- jhath16.email -->
+          <%= email %>
         </a>
         <br>
         <span class="octicon octicon-clock"></span>
@@ -88,7 +90,7 @@
         </div>
             <!--For every organization, generate this-->
       </div>
-    </div>
+    </script>
     <div class="right">
       <div class="tabs">
         <a href=""><span class="octicon octicon-diff-added"></span>Contributions</a>
@@ -129,8 +131,8 @@
             </div>
             <div class="right-repo">
               <span class="code-type">JavaScript</span>
-              <span><span class="octicon octicon-star"></span>0</span>
-              <span><span class="octicon octicon-git-branch"></span>0</span>
+              <a class="side-buttons" href=""><span><span class="octicon octicon-star"></span>0</span></a>
+              <a class="side-buttons" href=""><span><span class="octicon octicon-git-branch"></span>0</span></a>
             </div>
           </div>
       </div>
