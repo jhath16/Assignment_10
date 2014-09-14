@@ -12,15 +12,16 @@ function renderTemplate(templateId, container, model) {
   $(container).append(renderedTemplate);
 }
 
-$.getJSON(gitAPI).done(function(data) {
-  renderTemplate("sidebar",".left", data);   //Use moment.js to convert to correct time
+$.getJSON(gitAPI).done(function(profile) {
+  renderTemplate("sidebar-profile",".profile", profile);   //Use moment.js to convert to correct time
 });
 
 $.getJSON(orgsAPI).done(function(orgs) {
-  renderTemplate("sidebar",".left",orgs);
-    $.getJSON(orgs.url).done(function() {
-      renderTemplate("sidebar",".left",specific);
+  $.each(orgs, function(index, org) {
+    $.getJSON(org.url).done(function(org_details) {
+      renderTemplate("sidebar-org",".organizations",org_details);
     });
+  });
 });
 
 //$.getJSON(gitAPI, ;

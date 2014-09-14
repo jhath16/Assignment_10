@@ -61,8 +61,12 @@
   </header>
   <div class="container">
     <div class="left">
+      <div class="profile"></div>
+      <div class="organizations sidebar-div">
+        <h3>Organizations</h3>
+      </div>
     </div>
-    <script id="sidebar" type="text/template">
+    <script id="sidebar-profile" type="text/template">
       <a href="https://github.com/settings/profile"><img src="<%= avatar_url %>"></a>
       <h1><%= name %></h1>
       <h2><%=  login %></h2>
@@ -82,15 +86,13 @@
           <a href="<%= html_url %>/following"><li><span><%= following%></span><p>Following</p></li></a>
         </ul>
       </div>
-      <div class="organizations sidebar-div">
-        <h3>Organizations</h3>
-        <!-- Append div and link for TIY here -->
-            <!--For every organization, generate this-->
-        <div class="org-link">
-          <a href="<%= html_url %>"><img src="https://avatars.githubusercontent.com/u/8293064?v=2"></a>
-        </div>
-            <!--For every organization, generate this-->
+    </script>
+    <script id="sidebar-org" type="text/template">
+      <!--For every organization, generate this-->
+      <div class="org-link">
+        <a href="<%= html_url %>"><img src="<%= avatar_url %>"></a>
       </div>
+      <!--For every organization, generate this-->
     </script>
     <div class="right">
       <div class="tabs">
