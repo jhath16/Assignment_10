@@ -6,6 +6,7 @@
   <link href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css" rel="stylesheet" type="text/css">
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
 </head>
 <body>
 </body>
@@ -62,23 +63,23 @@
     <div class="left">
     </div>
     <script id="sidebar" type="text/template">
-      <img src="https://avatars0.githubusercontent.com/u/2738288?v=2&s=460">    <!-- Insert jhath16.avatar_url -->
+      <a href="https://github.com/settings/profile"><img src="<%= avatar_url %>"></a>
       <h1><%= name %></h1>
       <h2><%=  login %></h2>
       <div class="info sidebar-div">
         <span class="octicon octicon-mail"></span>
-        <a href="">
+        <a href="<%= email %>">
           <%= email %>
         </a>
         <br>
         <span class="octicon octicon-clock"></span>
-        <span>Joined on November 6, 2012</span><!-- "Joined on" + jhath16.created_at (moment.js) -->
+        <span>Joined on <%= moment(created_at).format('ll') %></span><!-- "Joined on" + jhath16.created_at (moment.js) -->
       </div>
       <div class="follow sidebar-div">
         <ul>
-          <a href=""><li><span>2</span><p>Followers</p></li></a>
+          <a href="<%= html_url %>/followers"><li><span><%= followers %></span><p>Followers</p></li></a>
           <a href=""><li><span>0</span><p>Starred</p></li></a>
-          <a href=""><li><span>2</span><p>Following</p></li></a>
+          <a href="<%= html_url %>/following"><li><span><%= following%></span><p>Following</p></li></a>
         </ul>
       </div>
       <div class="organizations sidebar-div">
@@ -86,7 +87,7 @@
         <!-- Append div and link for TIY here -->
             <!--For every organization, generate this-->
         <div class="org-link">
-          <a href=""><img src="https://avatars.githubusercontent.com/u/8293064?v=2"></a>
+          <a href="<%= html_url %>"><img src="https://avatars.githubusercontent.com/u/8293064?v=2"></a>
         </div>
             <!--For every organization, generate this-->
       </div>
@@ -140,7 +141,7 @@
   </div>
   <div class="footer">
     <span>&copy; 2014 GitHub, Inc.</span>
-    <nav>
+    <nav class="left-footer">
       <ul>
         <li><a href="">Terms</a></li>
         <li><a href="">Privacy</a></li>
@@ -148,8 +149,8 @@
         <li><a href="">Contact</a></li>
       </ul>
     </nav>
-    <a href=""><img src=""></a>
-    <nav>
+    <a href="http://www.github.com"><span class="octicon octicon-mark-github"></span></a>
+    <nav class="right footer">
       <ul>
         <li><a href="">Status</a></li>
         <li><a href="">API</a></li>

@@ -17,12 +17,10 @@ $.getJSON(gitAPI).done(function(data) {
 });
 
 $.getJSON(orgsAPI).done(function(orgs) {
-  var orgUrl = $.getJSON(tiyOrg).done(function(tiy){
-    return tiy.html_url;
-  });
-
-  var avatar = orgs.avatar_url;
-
+  renderTemplate("sidebar",".left",orgs);
+    $.getJSON(orgs.url).done(function() {
+      renderTemplate("sidebar",".left",specific);
+    });
 });
 
 //$.getJSON(gitAPI, ;
