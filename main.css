@@ -43,7 +43,7 @@ nav ul {
 
 header li {
   display:inline-block;
-  margin-right:12px;
+    margin-right:12px;
 }
 
 header li a {
@@ -442,11 +442,45 @@ span.code-type {
 .side-buttons:hover {
   color:#4183c4;
 }
-
+/*~~~~~~~~~~~~~~~~~  Footer  ~~~~~~~~~~~~~~~~~~~~*/
 .footer {
   width:77%;
+  margin:0 auto;
+  font-size:12px;
+  margin-bottom:31px;
+  position:relative;
+}
+
+.footer>span {
+  color:#777777;
+}
+
+.footer nav a{
+  text-decoration:none;
+  color:#4183c4;
+  margin-left:11px;
+}
+
+.footer nav a:hover {
+  text-decoration:underline;
 }
 
 .footer * {
   display:inline-block;
+}
+
+.right-footer {
+  float:right;
+}
+
+.footer .bottom-cat {
+  color:#cccccc;
+  position:absolute;
+  left:48.75%;
+  bottom:6px;
+  font-size:24px;
+}
+
+.bottom-cat:hover {
+  color:#bbbbbb;
 }
