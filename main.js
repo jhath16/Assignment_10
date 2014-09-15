@@ -14,7 +14,9 @@ function renderTemplate(templateId, container, model) {
 
 $.getJSON(gitAPI).done(function(profile) {
   renderTemplate("sidebar-profile",".profile", profile);
+  renderTemplate("header",".top-right-nav",profile);
 });
+
 
 $.getJSON(orgsAPI).done(function(orgs) {
   $.each(orgs, function(index, org) {

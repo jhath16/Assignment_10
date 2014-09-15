@@ -12,25 +12,27 @@
 </body>
   <header>
     <div class="header-container">
-      <a href="">
+      <a href="http://github.com">
         <span class="mega-octicon octicon-mark-github octocat"></span>
       </a>
       <input class="searchbar-1" type="text" placeholder="Search GitHub" name="search">
       <nav class="explore-nav">
         <ul>
-          <li><a href="">Explore</a></li>
-          <li><a href="">Gist</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Help</a></li>
+          <li><a href="http://github.com/explore">Explore</a></li>
+          <li><a href="http://gist.github.com">Gist</a></li>
+          <li><a href="http://github.com/blog">Blog</a></li>
+          <li><a href="http://help.github.com">Help</a></li>
         </ul>
       </nav>
       <div class="top-right-nav">
+      </div>
+      <script id="header" type="text/template">
         <nav>
           <ul>
             <li>
-              <a href="">
-                <img src="https://avatars0.githubusercontent.com/u/2738288?v=2&s=460">
-                <span class="login-name">jhath16<!-- jhath.login --></span>
+              <a href="http://github.com/<%= login %>">
+                <img src="<%= avatar_url %>">
+                <span class="login-name"><%=login%></span>
               </a>
             </li>
             <li>
@@ -40,12 +42,12 @@
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="http://github.com/notifications">
                 <span class="octicon octicon-inbox"></span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="http://github.com/settings/profile">
                 <span class="octicon octicon-gear"></span>
               </a>
             </li>
@@ -55,8 +57,10 @@
               </a>
             </li>
           </ul>
+
+          </script>
         </nav>
-      </div>
+
     </div>
   </header>
     <div class="container">
@@ -72,7 +76,7 @@
         <h2><%=  login %></h2>
         <div class="info sidebar-div">
           <span class="octicon octicon-mail"></span>
-          <a href="<%= email %>">
+          <a href="mailto:<%= email %>">
             <%= email %>
           </a>
           <br>
@@ -145,7 +149,7 @@
                 <div class="right-repo">
                   <span class="code-type"><%= language %></span>
                   <a class="side-buttons" href="http://github.com/<%= owner.login %>/<%= name %>/stargazers"><span><span class="octicon octicon-star"></span><%= stargazers_count %></span></a>
-                  <a class="side-buttons" href=""><span><span class="octicon octicon-git-branch"></span><%= forks_count %></span></a>
+                  <a class="side-buttons" href="http://github.com/<%= owner.login %>/<%= name %>/network"><span><span class="octicon octicon-git-branch"></span><%= forks_count %></span></a>
                 </div>
               </div>
             </script>
@@ -157,21 +161,21 @@
     <span>&copy; 2014 GitHub, Inc.</span>
     <nav class="left-footer">
       <ul>
-        <li><a href="">Terms</a></li>
-        <li><a href="">Privacy</a></li>
-        <li><a href="">Security</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="http://github.com/site/terms">Terms</a></li>
+        <li><a href="http://github.com/site/privacy">Privacy</a></li>
+        <li><a href="http://github.com/security">Security</a></li>
+        <li><a href="http://github.com/contact">Contact</a></li>
       </ul>
     </nav>
     <a href="http://www.github.com"><span class="octicon octicon-mark-github bottom-cat"></span></a>
     <nav class="right-footer">
       <ul>
-        <li><a href="">Status</a></li>
-        <li><a href="">API</a></li>
-        <li><a href="">Training</a></li>
-        <li><a href="">Shop</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">About</a></li>
+        <li><a href="http://status.github.com">Status</a></li>
+        <li><a href="http://developer.github.com">API</a></li>
+        <li><a href="http://training.github.com">Training</a></li>
+        <li><a href="http://shop.github.com">Shop</a></li>
+        <li><a href="http://github.com/blog">Blog</a></li>
+        <li><a href="http://github.com/about">About</a></li>
       </ul>
     </nav>
   </div>
