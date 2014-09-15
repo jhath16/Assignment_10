@@ -133,7 +133,6 @@ h3 {
 
 .container {
   width:77%;
-  height:700px; /*Remove this height when finished with the .repos div*/
   margin:0 auto;
   margin-top:18px;
 }
@@ -389,7 +388,9 @@ input:focus {
 /*~~~~~~~~~~~~~~~~Repositories formatting~~~~~~~~~~~~~~~~~*/
 
 .repo {
-  padding:30px 0;
+  padding-top:30px;
+  padding-bottom:20px;
+  border-bottom:1px solid #eeeeee;
 }
 
 .left-repo {
@@ -415,6 +416,11 @@ h4 {
   margin-top:13 px;
   color:#888888;
   font-size:12px;
+}
+
+.repo .repo-description {
+  color:#666666;
+  font-size:14px;
 }
 
 .right-repo {
@@ -449,6 +455,8 @@ span.code-type {
   font-size:12px;
   margin-bottom:31px;
   position:relative;
+  clear:both;
+  padding-top:30px;
 }
 
 .footer>span {
@@ -483,4 +491,10 @@ span.code-type {
 
 .bottom-cat:hover {
   color:#bbbbbb;
+}
+
+.clearfix {
+  clear:both;
+  padding-top:37px;
+  border-bottom:1px solid #eeeeee;
 }

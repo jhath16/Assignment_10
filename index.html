@@ -59,88 +59,100 @@
       </div>
     </div>
   </header>
-  <div class="container">
-    <div class="left">
-      <div class="profile"></div>
-      <div class="organizations sidebar-div">
-        <h3>Organizations</h3>
+    <div class="container">
+      <div class="left">
+        <div class="profile"></div>
+        <div class="organizations sidebar-div">
+          <h3>Organizations</h3>
+        </div>
       </div>
-    </div>
-    <script id="sidebar-profile" type="text/template">
-      <a href="https://github.com/settings/profile"><img src="<%= avatar_url %>"></a>
-      <h1><%= name %></h1>
-      <h2><%=  login %></h2>
-      <div class="info sidebar-div">
-        <span class="octicon octicon-mail"></span>
-        <a href="<%= email %>">
-          <%= email %>
-        </a>
-        <br>
-        <span class="octicon octicon-clock"></span>
-        <span>Joined on <%= moment(created_at).format('ll') %></span><!-- "Joined on" + jhath16.created_at (moment.js) -->
-      </div>
-      <div class="follow sidebar-div">
-        <ul>
-          <a href="<%= html_url %>/followers"><li><span><%= followers %></span><p>Followers</p></li></a>
-          <a href=""><li><span>0</span><p>Starred</p></li></a>
-          <a href="<%= html_url %>/following"><li><span><%= following%></span><p>Following</p></li></a>
-        </ul>
-      </div>
-    </script>
-    <script id="sidebar-org" type="text/template">
-      <!--For every organization, generate this-->
-      <div class="org-link">
-        <a href="<%= html_url %>"><img src="<%= avatar_url %>"></a>
-      </div>
-      <!--For every organization, generate this-->
-    </script>
-    <div class="right">
-      <div class="tabs">
-        <a href=""><span class="octicon octicon-diff-added"></span>Contributions</a>
-        <a href=""><span class="octicon octicon-repo"></span>Repositories</a>
-        <a href=""><span class="octicon octicon-rss"></span>Public activity</a>
-        <a href="">
-          <div class="edit-button">
-            <span class="octicon octicon-pencil"></span>Edit profile
-          </div>
-        <a>
-      </div>
-      <div class="search">
-        <input class="searchbox-2" type="text" placeholder="Find a repository...">
-        <a href="">
-          <div class="search-button">Search</div>
-        </a>
-        <nav>
+      <script id="sidebar-profile" type="text/template">
+        <a href="https://github.com/settings/profile"><img src="<%= avatar_url %>"></a>
+        <h1><%= name %></h1>
+        <h2><%=  login %></h2>
+        <div class="info sidebar-div">
+          <span class="octicon octicon-mail"></span>
+          <a href="<%= email %>">
+            <%= email %>
+          </a>
+          <br>
+          <span class="octicon octicon-clock"></span>
+          <span>Joined on <%= moment(created_at).format('ll') %></span><!-- "Joined on" + jhath16.created_at (moment.js) -->
+        </div>
+        <div class="follow sidebar-div">
           <ul>
-            <li><a href="">All</a></li>
-            <li><a href="">Public</a></li>
-            <li><a href="">Private</a></li>
-            <li><a href="">Sources</a></li>
-            <li><a href="">Forks</a></li>
-            <li><a href="">Mirrors</a></li>
+            <a href="<%= html_url %>/followers"><li><span><%= followers %></span><p>Followers</p></li></a>
+            <a href="http://www.github.com/stars/<%= login %>"><li><span>0</span><p>Starred</p></li></a>
+            <a href="<%= html_url %>/following"><li><span><%= following%></span><p>Following</p></li></a>
           </ul>
-        </nav>
-        <a href="">
-          <div class="new-repo-button">
-            <span class="octicon octicon-repo"></span>New
-          </div>
-        </a>
+        </div>
+      </script>
+      <script id="sidebar-org" type="text/template">
+        <!--For every organization, generate this-->
+        <div class="org-link">
+          <a href="<%= html_url %>"><img src="<%= avatar_url %>"></a>
+        </div>
+        <!--For every organization, generate this-->
+      </script>
+      <div class="right">
+        <div class="tabs">
+          <a href=""><span class="octicon octicon-diff-added"></span>Contributions</a>
+          <a href=""><span class="octicon octicon-repo"></span>Repositories</a>
+          <a href=""><span class="octicon octicon-rss"></span>Public activity</a>
+          <a href="">
+            <div class="edit-button">
+              <span class="octicon octicon-pencil"></span>Edit profile
+            </div>
+          <a>
+        </div>
+        <div class="search">
+          <input class="searchbox-2" type="text" placeholder="Find a repository...">
+          <a href="">
+            <div class="search-button">Search</div>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="">All</a></li>
+              <li><a href="">Public</a></li>
+              <li><a href="">Private</a></li>
+              <li><a href="">Sources</a></li>
+              <li><a href="">Forks</a></li>
+              <li><a href="">Mirrors</a></li>
+            </ul>
+          </nav>
+          <a href="">
+            <div class="new-repo-button">
+              <span class="octicon octicon-repo"></span>New
+            </div>
+          </a>
+        </div>
+        <div class="repositories">
+        </div>
+              <script id="repos" type="text/template">
+
+              <div class="repo">
+                <div class="left-repo">
+                  <a href="<%=  html_url %>"><h4><%= name %></h4></a>
+                  <% if(description != "") { %>
+                  <p class="repo-description"><%= description %></p>
+                  <% } %>
+                  <% if(moment(pushed_at) < moment().subtract(30, "days")) { %>
+                  <p>Updated <%= moment(pushed_at).format("MMM D") %></p>
+                  <% } else { %>
+                  <p>Updated <%= moment(pushed_at).fromNow() %></p>
+                  <% } %>
+                </div>
+                <div class="right-repo">
+                  <span class="code-type"><%= language %></span>
+                  <a class="side-buttons" href="http://github.com/<%= owner.login %>/<%= name %>/stargazers"><span><span class="octicon octicon-star"></span><%= stargazers_count %></span></a>
+                  <a class="side-buttons" href=""><span><span class="octicon octicon-git-branch"></span><%= forks_count %></span></a>
+                </div>
+              </div>
+            </script>
       </div>
-      <div class="repositories"> <!-- Append all repositories here -->
-          <div class="repo">
-            <div class="left-repo">
-              <a href=""><h4>Assignment_10</h4></a>
-              <p>Updated 3 hours ago</p>
-            </div>
-            <div class="right-repo">
-              <span class="code-type">JavaScript</span>
-              <a class="side-buttons" href=""><span><span class="octicon octicon-star"></span>0</span></a>
-              <a class="side-buttons" href=""><span><span class="octicon octicon-git-branch"></span>0</span></a>
-            </div>
-          </div>
+      <div class="clearfix">
       </div>
     </div>
-  </div>
   <div class="footer">
     <span>&copy; 2014 GitHub, Inc.</span>
     <nav class="left-footer">

@@ -13,7 +13,7 @@ function renderTemplate(templateId, container, model) {
 }
 
 $.getJSON(gitAPI).done(function(profile) {
-  renderTemplate("sidebar-profile",".profile", profile);   //Use moment.js to convert to correct time
+  renderTemplate("sidebar-profile",".profile", profile);
 });
 
 $.getJSON(orgsAPI).done(function(orgs) {
@@ -24,6 +24,10 @@ $.getJSON(orgsAPI).done(function(orgs) {
   });
 });
 
-//$.getJSON(gitAPI, ;
-
-//$.getJSON(reposAPI);
+$.getJSON(reposAPI).done(function(repo) {
+  var sorted = _.sortBy(repo, "pushed_at");
+  sorted.reverse();
+  $.each(sorted, function(index, repository) {
+    renderTemplate("repos",".repositories",repository);
+  });
+});
